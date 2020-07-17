@@ -1,0 +1,42 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+.auto_img {
+    width: 80px;
+}
+
+.list-scrollable{
+    max-height: 475px;
+    overflow-y: scroll;
+}
+
+.circulo {
+    width: 35px;
+    height: 35px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #f2e9e9;
+    align-items: center;
+    padding: 3% 0;
+    color: #000000;
+}
+
+.sensor-item {
+    font-size: 0.8rem;
+}
+
+.detail {
+    text-align: left;
+    font-weight: normal;
+}
+
+.download-options {
+    text-align: left;
+    padding-bottom: 15px;
+}
+
+.download-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
