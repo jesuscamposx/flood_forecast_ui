@@ -8,7 +8,9 @@ const SERVICE_ENDPOINTS = {
     GET_MEASURES_FILE: 'http://localhost:8000/api/archivo/nivel-agua?years=',
     LIST_TOWNS: 'http://localhost:8000/api/alcaldia',
     LIST_QUARTERS: 'http://localhost:8000/api/colonia',
+    LIST_STREETS: 'http://localhost:8000/api/calle?colonia=',
     GET_FORECAST: 'http://localhost:8000/api/ml/prediccion?',
+    CREATE_USER: 'http://localhost:8000/api/alerta'
 }
 
 export default SERVICE_ENDPOINTS;

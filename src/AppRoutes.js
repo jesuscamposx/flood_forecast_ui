@@ -4,6 +4,7 @@ import App from './App'
 import Home from './pages/Home'
 import Sensors from './pages/Sensors'
 import Forecast from './pages/Forecast'
+import Register from './pages/Register';
 
 const AppRoutes = () =>
     <App>
@@ -11,6 +12,7 @@ const AppRoutes = () =>
             <Route exact path="/" component={Home} />
             <Route exact path="/sensores" component={Sensors} />
             <Route exact path='/pronostico' component={Forecast}/>
+            <Route exact path='/registrarse' component={Register}/>
         </Switch>
     </App>
 

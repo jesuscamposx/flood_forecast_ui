@@ -16,6 +16,13 @@ class ForecastService {
         });
     }
 
+    static getStreets(param) {
+        return query({
+            endpoint: SERVICE_ENDPOINTS.LIST_STREETS + param,
+            method: 'GET'
+        });
+    }
+
     static getForecast(param) {
         return query({
             endpoint: SERVICE_ENDPOINTS.GET_FORECAST + param,
