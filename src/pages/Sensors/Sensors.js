@@ -94,7 +94,7 @@ const Sensors = () => {
                     />
                 </Col>
                 <Col>
-                    <h4>Ubicaciones</h4>
+                    <h4>Locations</h4>
                     <SensorMap
                         sensors = { sensorList }
                         selected = { selected }
