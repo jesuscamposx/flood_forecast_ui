@@ -104,7 +104,7 @@ const Sensors = () => {
                 </Col>
                 <Col>
                     <DownloadPanel
-                        title="Descargar registro de inundaciones"
+                        title="Descargar registro de inundaciones reportadas"
                         subtitle="Años disponibles:"
                         catalogue={ catalogueF }
                         doDownload={ downloadFloods }

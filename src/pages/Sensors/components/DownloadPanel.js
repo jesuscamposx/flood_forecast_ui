@@ -12,7 +12,8 @@ const DownloadPanel = ({
     const [years, setYears] = useState([]);
 
     const generateOptions = () => {
-        const o = catalogue.map((c) => (
+        let temp = catalogue.sort();
+        const o = temp.map((c) => (
             <Button
                 outline
                 active={years.includes(String(c))}
