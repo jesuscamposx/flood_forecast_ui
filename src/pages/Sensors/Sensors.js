@@ -21,6 +21,7 @@ const Sensors = () => {
     const getList = async () => {
         try {
             let { data } =  await SensorService.getSensorList();
+            console.log(data)
             setSensorList(data);
         } catch(e) {
             handleError(e)
@@ -94,7 +95,7 @@ const Sensors = () => {
                     />
                 </Col>
                 <Col>
-                    <h4>Ubicaciones</h4>
+                    <h4>Locations</h4>
                     <SensorMap
                         sensors = { sensorList }
                         selected = { selected }
@@ -104,7 +105,7 @@ const Sensors = () => {
                 </Col>
                 <Col>
                     <DownloadPanel
-                        title="Descargar registro de inundaciones"
+                        title="Descargar registro de inundaciones reportadas"
                         subtitle="Años disponibles:"
                         catalogue={ catalogueF }
                         doDownload={ downloadFloods }

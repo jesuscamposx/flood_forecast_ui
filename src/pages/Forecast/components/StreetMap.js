@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow, Circle } from 'google-maps-react';
 import floodicon from './../../../static/img/inundar.png';
 import { Badge } from 'reactstrap';
 
@@ -14,6 +14,7 @@ const mapStyles = {
       quarter
   }) => {
       const [markers, setMarkers] = useState([]);
+      const [circles, setCircles] = useState([]);
       const [activeMarker, setActiveMarker] = useState(null);
       const [isIwShown, setIsIwShown] = useState(false);
       const [detail, setDetail] = useState({});
@@ -41,6 +42,22 @@ const mapStyles = {
         })
         setMarkers(m);
       }
+
+      const generateCircles = () => {
+        let c = streets.map((s) => {
+          return(
+            <Circle
+                center={{
+                  lat: Number(s.latitud),
+                  lng: Number(s.longitud)
+                }}
+                radius={300}
+                fillColor={"#ff0000"}
+                strokeColor={"#ff0000"}/>
+        )});
+        console.log(c)
+        setCircles(c);
+      }
   
       const onMarkerClick = (props,marker,e) => {
         setActiveMarker(marker);
@@ -58,6 +75,7 @@ const mapStyles = {
   
       useEffect(() => {
           console.log(markers)
+        generateCircles();
         generateMarkers();// eslint-disable-next-line
       }, [streets]);
 
@@ -82,6 +100,7 @@ const mapStyles = {
               center={center}
           >
               {markers}
+              {circles}
               <InfoWindow
                 marker={activeMarker}
                 visible={isIwShown}

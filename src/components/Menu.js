@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
-import logo_transparent from './../static/img/logo_transparent.png'
+import logo_transparent from './../static/img/logo_transparent.png';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
   NavbarText
 } from 'reactstrap';
 
@@ -19,17 +18,17 @@ const Menu = (props) => {
   return (
     <div>
       <Navbar color="dark" dark expand="md">
-        <NavbarBrand href="/">
+        <Link className="navbar-brand" to="/">
             <img src={logo_transparent} alt="logo" className="auto_img" />
-        </NavbarBrand>
+        </Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/sensores/">Sensores</NavLink>
+              <Link className="nav-link" to="/sensores/">Sensores</Link>
             </NavItem>
             <NavItem>
-              <NavLink href="/pronostico/">Pronóstico</NavLink>
+              <Link className="nav-link" to="/pronostico/">Pronóstico</Link>
             </NavItem>
           </Nav>
           <NavbarText>UPIITA-IPN</NavbarText>
