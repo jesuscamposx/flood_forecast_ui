@@ -35,6 +35,7 @@ const HomeCarousel = (props) => {
     const slides = items.map((item) => {
       return (
         <CarouselItem
+          className='carousel'
           onExiting={() => setAnimating(true)}
           onExited={() => setAnimating(false)}
           key={item.src}

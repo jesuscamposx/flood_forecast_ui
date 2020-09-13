@@ -26,6 +26,8 @@ export const SensorMap = (props) => {
         lng: -99.086716
       });
 
+    const months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
     const generateMarkers = () => {
       let m = sensors.map((s) => {
         return(
@@ -76,6 +78,14 @@ export const SensorMap = (props) => {
       onSelectedChange();// eslint-disable-next-line
     }, [props.selected]);
 
+    const getDate = (dt) => {
+      let dto = new Date(dt);
+      let dtString = dto.getDate() + " de " + months[dto.getMonth()]
+                     + " de " + dto.getFullYear() + " " + dto.getHours()
+                     + ":" +dto.getMinutes() + ":" +dto.getSeconds() + " horas";
+      return dtString;
+    }
+
     return (
         <Map
             google={props.google}
@@ -93,19 +103,19 @@ export const SensorMap = (props) => {
               <div className="detail">
                 
                   <h6><Badge color="primary">{"Id: "}</Badge>
-                      <Badge color="secondary">{detail.id_sensor}</Badge>
+                      <Badge color="info">{detail.id_sensor}</Badge>
                   </h6>
                   <h6><Badge color="primary">{"Lat: "}</Badge>
-                      <Badge color="secondary">{detail.latitud}</Badge>
+                      <p color="secondary">{String(parseFloat(detail.latitud))}</p>
                   </h6>
                   <h6><Badge color="primary">{"Long: "}</Badge>
-                      <Badge color="secondary">{detail.longitud}</Badge>
+                      <p color="secondary">{String(parseFloat(detail.longitud))}</p>
                   </h6>
                   <h6><Badge color="primary">{"Nivel: "}</Badge>
-                      <Badge color="secondary">{detail.nivel_agua + "cm"}</Badge>
+                      <p color="secondary">{detail.nivel_agua + "cm"}</p>
                   </h6>
                   <h6><Badge color="primary">{"Actualizado: "}</Badge>
-                      <Badge color="secondary">{detail.creado}</Badge>
+                      <p color="secondary">{getDate(detail.creado)}</p>
                   </h6>
               </div>
             </InfoWindow>

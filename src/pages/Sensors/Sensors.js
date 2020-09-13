@@ -21,6 +21,7 @@ const Sensors = () => {
     const getList = async () => {
         try {
             let { data } =  await SensorService.getSensorList();
+            console.log(data)
             setSensorList(data);
         } catch(e) {
             handleError(e)

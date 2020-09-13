@@ -30,6 +30,13 @@
     font-weight: normal;
 }
 
+.detail p {
+    display: inline;
+    margin-left: 3px;
+    margin-bottom: 0px;
+    font-size: 80%;
+}
+
 .download-options {
     text-align: left;
     padding-bottom: 15px;
@@ -60,6 +67,6 @@
     text-align: left;
 }
 
-.calendar-f {
-
+.carousel {
+    max-height: 500px;
 }
