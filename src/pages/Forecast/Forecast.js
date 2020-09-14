@@ -56,7 +56,8 @@ const Forecast = () => {
             getStreets(quarter, data.inundacion)
             setForecast(data);
         } catch(e) {
-            handleError(e);
+            
+            handleError(e.response.data ? e.response.data.text : e);
         }
     }
 
@@ -112,6 +113,7 @@ const Forecast = () => {
     }, []);
 
     const handleError = (e) => {
+        console.log(e)
         setAlertText(String(e))
         setAlertType("danger")
         setAlertOpen(true)
