@@ -77,22 +77,23 @@ const Forecast = () => {
         let type;
         let text;
         let icon;
+        console.log(forecast.value)
         if(forecast.value <= 0.5) {
             type = "info"
-            text = "Poca probabilidad de inundación (" + String(Math.round(forecast.value*100)) + ")"
+            text = "No hay probabilidad de inundación (" + String(Math.floor(forecast.value*100)) + "%)"
             icon = informacion 
         } else if(forecast.value > 0.5 && forecast <= 0.6) {
             type="warning"
-            text="Probabilidad baja de inundación (" + String(Math.round(forecast.value*100)) + ")"
+            text="Probabilidad baja de inundación (" + String(Math.floor(forecast.value*100)) + "%)"
             icon=error
         } else if(forecast.value > 0.6 && forecast <= 0.8) {
             icon=emergencia
             type="danger"
-            text="Probabilidad media de inundación (" + String(Math.round(forecast.value*100)) + ")"
+            text="Probabilidad media de inundación (" + String(Math.floor(forecast.value*100)) + "%)"
         } else {
             icon=emergencia
             type="danger"
-            text="Probabilidad alta de inundación (" + String(Math.round(forecast.value*100)) + ")"
+            text="Probabilidad alta de inundación (" + String(Math.floor(forecast.value*100)) + "%)"
         }
 
         setAlertFText(text)
